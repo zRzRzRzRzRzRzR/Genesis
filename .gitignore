@@ -1,0 +1,11 @@
+*venv
+*.DS_Store
+*.idea/
+dataset
+test*
+context
+chat*
+config.yaml
+text*
+videos
+outputs*

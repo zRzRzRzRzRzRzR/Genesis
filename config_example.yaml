@@ -1,0 +1,23 @@
+llm_config:
+  zhipu:
+    model: glm-4-plus
+    base_url: https://open.bigmodel.cn/api/paas/v4
+    api_key:
+  qwen2.5vl-72b:
+    model: Qwen2.5-VL-72B-Instruct
+    base_url: http://localhost:8000/v1
+    api_key: EMPTY
+  qwen2.5vl-7b:
+    model: Qwen2.5-VL-7B-Instruct
+    base_url: http://localhost:8000/v1
+    api_key: EMPTY
+  internvl3-78b:
+    model: InternVL3-78B-Instruct
+    base_url: http://localhost:8000/v1
+    api_key: EMPTY
+
+embed_config:
+  zhipu:
+    model: embedding-3
+    base_url: https://open.bigmodel.cn/api/paas/v4
+    api_key:
