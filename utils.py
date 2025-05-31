@@ -1,10 +1,10 @@
-import os
-
-from openai import OpenAI, AzureOpenAI
-import json
-import re
-import yaml
 import base64
+import json
+import os
+import re
+
+import yaml
+from openai import AzureOpenAI, OpenAI
 
 
 def load_yaml_config(config_path, api_name, config_type="llm_config"):

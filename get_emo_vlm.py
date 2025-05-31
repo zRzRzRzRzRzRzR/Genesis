@@ -1,9 +1,12 @@
-import os
-import json
 import argparse
-from tqdm import tqdm
-from utils import call_large_model, parse_json_response, load_yaml_config
 import concurrent.futures
+import json
+import os
+
+from tqdm import tqdm
+
+from utils import call_large_model, load_yaml_config, parse_json_response
+
 
 system_prompt = r"""
 你是一名情绪事件分析助手。我将会给你一段视频，以及不同时间的字幕，包含说话人，说话内容和时间(分:秒)，我需要你根据我提供的视频和字幕，推断出该角色最重要、最核心的情绪事件。
@@ -33,7 +36,7 @@ system_prompt = r"""
                         "state": "positive/negative/neutral/ambiguous/doubt",
                         "reason": 该事件产生该情绪的原因
                     }
-                ] 
+                ]
             }
         ]
     },

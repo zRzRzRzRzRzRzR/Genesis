@@ -1,11 +1,13 @@
-import os
-import re
-import json
 import argparse
 import asyncio
-from tqdm import tqdm
-from utils import load_json, call_embedding, cosine_similarity, load_yaml_config
+import json
+import os
+import re
+
 from openai import OpenAI
+from tqdm import tqdm
+
+from utils import call_embedding, cosine_similarity, load_json, load_yaml_config
 
 
 async def judge_similarity_with_llm(text_a, text_b, judge_config):
@@ -32,7 +34,7 @@ async def judge_similarity_with_llm(text_a, text_b, judge_config):
 
 ### 输入示例
 
-文本A: 我爱吃苹果 
+文本A: 我爱吃苹果
 文本B: 我觉得苹果很好吃
 请判断是否相似(0或1):
 
