@@ -1,8 +1,20 @@
 # Genesis: Multimodal Multi-Party Dataset for Emotional Causal Analysis
 
-> Dataset: [🤗 Huggingface](https://huggingface.co/datasets/zRzRzRzRzRzRzR/Genesis_Dataset), [🤖 ModelScope](https://modelscope.cn/datasets/zRzRzRzRzRzRzR/Genesis_Dataset)
+> Dataset: 
+> [🤗 Huggingface](https://huggingface.co/datasets/zRzRzRzRzRzRzR/Genesis_Dataset), 
+> [🤖 ModelScope](https://modelscope.cn/datasets/zRzRzRzRzRzRzR/Genesis_Dataset)
 >
 > Paper: [arXiv (Comming Soon)]()
+
+![img](resources/genesis.png)
+
+Genesis contains 1,000 dialogues (average 208 turns each) across diverse real-life settings (debate, family, education,
+social). We use a two-layer annotation system to capture both immediate emotional triggers and long-term causal chains,
+including cross-modal inconsistencies and long-distance emotional dependencies.
+
+We benchmark 20 popular multimodal models and find they struggle with long-term emotional reasoning. To address this, we
+propose Empathica, a new evaluation baseline using a Recognition-Memory-Attribution framework that outperforms both
+text-based and multimodal models.
 
 ## Dataset Format
 
@@ -36,7 +48,9 @@ Make sure you have at least one NVIDIA GPU and are using `python>=3.12`. Then ru
 pip install -r requirements.txt
 ```
 
-### Using VLM for Sentiment Analysis (Without Five-Tuple Annotations)
+### Using VLM for Sentiment Analysis
+
+This approach leverages Vision-Language Models (VLMs) for sentiment analysis without requiring five-tuple annotations.
 
 1. Place all subtitle files into the `texts` directory and videos into the `videos` directory.Ensure video files follow
    the naming format `chat_*.mp4` and text files follow `chat_*.json`.
@@ -94,3 +108,11 @@ pip install -r requirements.txt
       }
     }
     ```
+
+## Citation
+
+If you find our work helpful, please consider citing the following paper.
+
+```bibtex
+Coming Soon
+```
