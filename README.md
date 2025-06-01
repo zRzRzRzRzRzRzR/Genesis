@@ -1,7 +1,7 @@
 # Genesis: Multimodal Multi-Party Dataset for Emotional Causal Analysis
 
-> Dataset: 
-> [🤗 Huggingface](https://huggingface.co/datasets/zRzRzRzRzRzRzR/Genesis_Dataset), 
+> Dataset:
+> [🤗 Huggingface](https://huggingface.co/datasets/zRzRzRzRzRzRzR/Genesis_Dataset),
 > [🤖 ModelScope](https://modelscope.cn/datasets/zRzRzRzRzRzRzR/Genesis_Dataset)
 >
 > Paper: [arXiv (Comming Soon)]()

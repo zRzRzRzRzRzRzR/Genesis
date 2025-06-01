@@ -303,18 +303,18 @@ async def main():
 
     file_pairs = []
     for f in os.listdir(args.input_dir):
-        m = re.match(r"output_emotions_(\d+)(?:_(events))?\.json", f)
+        m = re.match(r"emotions_(\d+)(?:_(events))?\.json", f)
         if m:
             idx = m.group(1)
             pred_file_path = os.path.join(args.input_dir, f)
-            gt_file_path = os.path.join(args.gt_dir, f"emo_{idx}.json")
+            gt_file_path = os.path.join(args.gt_dir, f"chat_{idx}.json")
             out_file_path = os.path.join(args.output_dir, f"evaluation_{idx}.json")
             if not os.path.exists(gt_file_path) or os.path.exists(out_file_path):
                 print(f"[WARN] Skipping {f}")
                 continue
             file_pairs.append((gt_file_path, pred_file_path, out_file_path))
 
-    file_pairs.sort(key=lambda x: int(re.search(r"output_emotions_(\d+)", x[1]).group(1)))
+    file_pairs.sort(key=lambda x: int(re.search(r"emotions_(\d+)", x[1]).group(1)))
     sem = asyncio.Semaphore(args.batch)
     all_state_percentages = []
     all_source_id_percentages = []
