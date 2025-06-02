@@ -3,6 +3,7 @@ import json
 import os
 import re
 
+import numpy as np
 import yaml
 from openai import AzureOpenAI, OpenAI
 
@@ -88,6 +89,29 @@ def call_large_model(
             return response.choices[0].message.content.strip()
 
     return {}
+
+
+def call_embedding(texts, api_key, base_url, model="embedding-3"):
+    if isinstance(texts, list):
+        texts = [" " if text == "" else text for text in texts]
+
+    client = OpenAI(api_key=api_key, base_url=base_url)
+    response = client.embeddings.create(model=model, input=texts)
+    embeddings = []
+    for item in response.data:
+        emb = np.array(item.embedding, dtype="float32")
+        embeddings.append(emb)
+    return embeddings
+
+
+def cosine_similarity(a, b):
+    a = np.array(a, dtype=np.float32)
+    b = np.array(b, dtype=np.float32)
+    norm_a = np.linalg.norm(a)
+    norm_b = np.linalg.norm(b)
+    if norm_a == 0 or norm_b == 0:
+        return 0.0
+    return float(np.dot(a, b) / (norm_a * norm_b))
 
 
 def clean_response(response_str):
