@@ -109,6 +109,12 @@ This approach leverages Vision-Language Models (VLMs) for sentiment analysis wit
     }
     ```
 
+### Evaluation
+
+```shell
+python get_emo_score.py --gt_dir gt --input_dir outputs/qwen2.5vl-72b --output_dir score/qwen2.5vl-72b  --event_threshold 0.7 --batch 16
+```
+
 ## Citation
 
 If you find our work helpful, please consider citing the following paper.
