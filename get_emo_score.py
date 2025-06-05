@@ -307,7 +307,7 @@ async def main():
         if m:
             idx = m.group(1)
             pred_file_path = os.path.join(args.input_dir, f)
-            gt_file_path = os.path.join(args.gt_dir, f"emo_{idx}.json")
+            gt_file_path = os.path.join(args.gt_dir, f"chat_{idx}.json")
             out_file_path = os.path.join(args.output_dir, f"evaluation_{idx}.json")
             if not os.path.exists(gt_file_path) or os.path.exists(out_file_path):
                 print(f"[WARN] Skipping {f}")
